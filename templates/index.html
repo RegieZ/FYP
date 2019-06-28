@@ -1,0 +1,87 @@
+<!doctype html>
+<html class="no-js" lang="en"> 
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=2">
+
+    <title>Interactive Visualization</title>
+    <meta name="description" content="This is a FYP from HKBU CS.">
+    <meta name="author" content="ZHAO ZI RUI 14253801">
+
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <!-- CSS concatenated and minified via ant build script-->
+    <link rel="stylesheet" href="/static/css/reset.css">
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <!-- end CSS-->
+
+    <script src="/static/js/libs/modernizr-2.0.6.min.js"></script>
+</head>
+
+<body>
+
+<div id="container" class="container">
+    <header>
+        <br /><h1 style="text-align: center;">Find More Similar Songs or Movies</h1><br /><br />
+        <p style="text-align: center;">---Similar art works are linked together. Nodes are colored by artist and sized based on playcounts.---</p><br /><br />
+    </header>
+
+    <div id="controls">
+        <div id="sorts" class="control">
+            <span>Sort: </span>
+            <a id="songs" class="active">Nodes</a>
+            <a id="links">Links</a>
+        </div>
+
+        <div id="layouts" class="control">
+            <span>Layout: </span>
+            <a id="force" class="active">Centralized</a>
+            <a id="radial">Spread</a>
+        </div>
+        
+        <div id="filters" class="control">
+            <span>Filter: </span>
+            <a id="all" class="active">All</a>
+            <a id="popular">Popular</a>
+            <a id="obscure">Others</a>
+        </div>
+
+        <div id="song_selection" class="control">
+            <span>Search</span>
+            <select id="song_select">
+                <option value="call_me_al.json">You Can Call Me Al</option>
+                <option value="sledgehammer_2_rounds.json">Sledgehammer</option>
+                <option value="poker_face.json">Poker Face</option>
+                <option value="jolene.json">Jolene</option>
+                <option value="helplessness_blues.json">Helplessness Blues</option>
+                <option value="she_said.json">She Said She Said</option>
+                <option value="short_skirt.json">Short Skirt, Long Jacket</option>
+            </select>
+        </div>
+        
+        <!-- Graph -->
+        <div id="main" role="main">
+            <div id="vis"></div>
+        </div>
+
+        <footer>
+            <p>Data from 
+                <a href="https://movie.douban.com/top250">Douban</a>,
+                <a href="https://m.imdb.com/chart/moviemeter?ref_=m_nv_mv_mvm">IMDB</a> and
+                <a href="https://www.last.fm/search/tracks?q={0}">Last.fm</a>.
+                Popular artworks are defined as those with playcounts above the median.</p>
+
+        </footer>
+    </div> 
+
+    <script>window.jQuery || document.write('<script src="/static/js/libs/jquery-1.7.2.min.js"><\/script>')</script>
+    <script defer src="/static/js/plugins.js"></script>
+    <script defer src="/static/js/script.js"></script>
+    <script src="/static/js/libs/coffee-script.js"></script>
+    <script src="/static/js/libs/d3.v2.js"></script>
+    <script src="/static/js/Tooltip.js"></script>
+    <script type="text/coffeescript" src="/static/coffee/vis.coffee"></script>
+
+</body>
+</html>
